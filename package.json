@@ -1,0 +1,17 @@
+{
+  "name": "gaz_kotel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "html-validator-cli": "^7.0.1",
+    "lighthouse": "^13.0.3"
+  }
+}
