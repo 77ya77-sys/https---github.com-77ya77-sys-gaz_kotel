@@ -553,6 +553,14 @@ section {
 .card-image-wrapper {
     position: relative;
     height: 180px;
+    background-color: #f1f5f9;
+}
+
+.portfolio-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .badge-after {
@@ -615,35 +623,98 @@ section {
     overflow: hidden;
     position: relative;
     height: 320px;
-    background-color: #e2e8f0;
+    /* Базовая высота для мобилок */
+    background-color: #000;
+}
+
+.review-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+    z-index: 1;
+}
+
+.video-review.is-playing .review-video {
+    display: block;
+}
+
+.video-review.is-playing .video-thumbnail {
+    opacity: 0;
+    pointer-events: none;
 }
 
 .video-thumbnail {
+    position: absolute;
+    /* Превью тоже делаем абсолютным, чтобы они накладывались */
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 24px;
+    transition: opacity 0.5s ease;
+    z-index: 2;
+}
+
+/* Оверлей поверх превью для читаемости текста и кнопки */
+.video-thumbnail::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.6) 100%);
+    z-index: 1;
+}
+
+.play-btn,
+.video-info {
+    position: relative;
+    z-index: 2;
 }
 
 .play-btn {
-    width: 72px;
-    height: 72px;
-    background-color: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(4px);
+    width: 84px;
+    height: 84px;
+    background-color: #000000;
+    border: 3px solid #ffffff;
+    /* Твёрдая белая обводка для макс. контраста */
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: transform 0.2s ease;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+    position: relative;
+}
+
+.play-btn svg {
+    width: 32px;
+    height: 32px;
+    fill: #ffffff;
 }
 
 .play-btn:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.play-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.play-btn:hover svg {
+    transform: scale(1.1);
 }
 
 .video-info {
@@ -695,6 +766,13 @@ section {
     justify-content: center;
     font-weight: 700;
     color: var(--text-muted);
+    overflow: hidden;
+}
+
+.reviewer-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .reviewer-meta {
@@ -1391,7 +1469,7 @@ section {
 
     .video-review {
         height: 100%;
-        min-height: auto;
+        /* Возвращаем к 100%, чтобы высота определялась карточками справа */
     }
 
     .price-list-card {
@@ -1515,12 +1593,12 @@ section {
     gap: 16px;
     border: 1px solid var(--border-color);
     max-width: 500px;
-    transform: translateY(0) !important;
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(120%);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .cookie-banner.active {
-    transform: translateY(0);
+    transform: translateY(-24px) !important;
 }
 
 /* --- Pricing Modal & Table --- */
@@ -1674,7 +1752,7 @@ section {
         max-width: 800px;
         left: 50%;
         bottom: 24px;
-        transform: translateX(-50%) translateY(0) !important;
+        transform: translateX(-50%) translateY(120%);
     }
 
     .cookie-banner.active {

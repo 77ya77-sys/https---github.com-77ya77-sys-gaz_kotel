@@ -357,14 +357,7 @@
                     <!-- Card 1 -->
                     <div class="portfolio-card">
                         <div class="card-image-wrapper">
-                            <div
-                                style="width:100%; height:100%; background:#e2e8f0; display:flex; align-items:center; justify-content:center;">
-                                <svg width="48" height="48" fill="none" stroke="#CBD5E1" stroke-width="2">
-                                    <rect x="3" y="3" width="18" height="18" rx="2" />
-                                    <circle cx="8.5" cy="8.5" r="1.5" />
-                                    <polyline points="21 15 16 10 5 21" />
-                                </svg>
-                            </div>
+                            <img src="images/portfolio-1.webp" alt="Ремонт Bosch Gaz 6000" class="portfolio-img">
                         </div>
                         <div class="portfolio-info">
                             <h3 class="portfolio-title">Ремонт Bosch Gaz 6000</h3>
@@ -383,14 +376,7 @@
                     <!-- Card 2 -->
                     <div class="portfolio-card">
                         <div class="card-image-wrapper">
-                            <div
-                                style="width:100%; height:100%; background:#e2e8f0; display:flex; align-items:center; justify-content:center;">
-                                <svg width="48" height="48" fill="none" stroke="#CBD5E1" stroke-width="2">
-                                    <rect x="3" y="3" width="18" height="18" rx="2" />
-                                    <circle cx="8.5" cy="8.5" r="1.5" />
-                                    <polyline points="21 15 16 10 5 21" />
-                                </svg>
-                            </div>
+                            <img src="images/portfolio-2.webp" alt="Ошибка E03 Baxi Main" class="portfolio-img">
                         </div>
                         <div class="portfolio-info">
                             <h3 class="portfolio-title">Ошибка E03 Baxi Main</h3>
@@ -409,14 +395,7 @@
                     <!-- Card 3 -->
                     <div class="portfolio-card">
                         <div class="card-image-wrapper">
-                            <div
-                                style="width:100%; height:100%; background:#e2e8f0; display:flex; align-items:center; justify-content:center;">
-                                <svg width="48" height="48" fill="none" stroke="#CBD5E1" stroke-width="2">
-                                    <rect x="3" y="3" width="18" height="18" rx="2" />
-                                    <circle cx="8.5" cy="8.5" r="1.5" />
-                                    <polyline points="21 15 16 10 5 21" />
-                                </svg>
-                            </div>
+                            <img src="images/portfolio-3.webp" alt="Промывка Navien" class="portfolio-img">
                         </div>
                         <div class="portfolio-info">
                             <h3 class="portfolio-title">Промывка Navien</h3>
@@ -434,14 +413,7 @@
                     <!-- Card 4 -->
                     <div class="portfolio-card">
                         <div class="card-image-wrapper">
-                            <div
-                                style="width:100%; height:100%; background:#e2e8f0; display:flex; align-items:center; justify-content:center;">
-                                <svg width="48" height="48" fill="none" stroke="#CBD5E1" stroke-width="2">
-                                    <rect x="3" y="3" width="18" height="18" rx="2" />
-                                    <circle cx="8.5" cy="8.5" r="1.5" />
-                                    <polyline points="21 15 16 10 5 21" />
-                                </svg>
-                            </div>
+                            <img src="images/portfolio-4.webp" alt="Плата Viessmann Vitopend" class="portfolio-img">
                         </div>
                         <div class="portfolio-info">
                             <h3 class="portfolio-title">Плата Viessmann Vitopend</h3>
@@ -466,8 +438,10 @@
                 <h2 class="h2-title">Отзывы клиентов</h2>
                 <div class="reviews-grid">
                     <div class="video-review">
-                        <div class="video-thumbnail">
-                            <div class="play-btn">
+                        <video id="reviewVideo" class="review-video" src="video/review-1.mp4" preload="metadata"
+                            playsinline></video>
+                        <div class="video-thumbnail" style="background-image: url('images/video-preview.webp');">
+                            <div class="play-btn" id="playVideoBtn">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="#ffffff"
                                     style="margin-left: 4px;">
                                     <polygon points="5 3 19 12 5 21 5 3"></polygon>
@@ -483,7 +457,9 @@
                     <div class="text-reviews">
                         <div class="text-review-card">
                             <div class="reviewer-header">
-                                <div class="reviewer-avatar">ЕВ</div>
+                                <div class="reviewer-avatar">
+                                    <img src="images/rev_elena.png" alt="Елена В.">
+                                </div>
                                 <div class="reviewer-meta">
                                     <strong>Елена В.</strong>
                                     <div class="stars">★★★★★</div>
@@ -495,7 +471,9 @@
                         </div>
                         <div class="text-review-card">
                             <div class="reviewer-header">
-                                <div class="reviewer-avatar">ВП</div>
+                                <div class="reviewer-avatar">
+                                    <img src="images/rev_victor.png" alt="Виктор П.">
+                                </div>
                                 <div class="reviewer-meta">
                                     <strong>Виктор П.</strong>
                                     <div class="stars">★★★★★</div>

@@ -3,16 +3,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const cookieBanner = document.querySelector('.cookie-banner');
     const acceptBtn = document.querySelector('.cookie-accept-btn');
 
+    const getCookie = (name) => {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+    };
+
     if (cookieBanner && acceptBtn) {
         // Если куки уже приняты ранее, скрываем баннер
-        if (localStorage.getItem('cookieAccepted') === 'true') {
+        if (getCookie('cookieAccepted') === 'true') {
             cookieBanner.classList.add('cookie-hidden');
+        } else {
+            cookieBanner.classList.add('active');
         }
 
         // Обработка клика по кнопке "Принять"
         acceptBtn.addEventListener('click', function () {
             cookieBanner.classList.add('cookie-hidden');
-            localStorage.setItem('cookieAccepted', 'true');
+            cookieBanner.classList.remove('active');
+
+            // Устанавливаем куку на 30 дней
+            const d = new Date();
+            d.setTime(d.getTime() + (30 * 24 * 60 * 60 * 1000));
+            document.cookie = `cookieAccepted=true;expires=${d.toUTCString()};path=/`;
         });
     }
 
@@ -184,6 +197,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
         nextBtn.addEventListener('click', () => {
             track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+        });
+    }
+
+    // --- Video Review Logic ---
+    const playVideoBtn = document.getElementById('playVideoBtn');
+    const reviewVideo = document.getElementById('reviewVideo');
+    const videoContainer = document.querySelector('.video-review');
+
+    if (playVideoBtn && reviewVideo && videoContainer) {
+        playVideoBtn.addEventListener('click', () => {
+            videoContainer.classList.add('is-playing');
+            reviewVideo.controls = true; // Показываем стандартные кнопки управления после старта
+            reviewVideo.play();
+        });
+
+        // Если видео закончилось, можно вернуть обложку (опционально)
+        reviewVideo.addEventListener('ended', () => {
+            videoContainer.classList.remove('is-playing');
+            reviewVideo.controls = false;
+            reviewVideo.load(); // Возвращаем к первому кадру
         });
     }
 });
