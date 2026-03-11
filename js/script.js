@@ -9,24 +9,30 @@ document.addEventListener('DOMContentLoaded', () => {
         if (parts.length === 2) return parts.pop().split(';').shift();
     };
 
+    const cookieCloseBtn = document.getElementById('closeCookies');
+
+    const hideCookieBanner = (saveAccept) => {
+        cookieBanner.classList.add('cookie-hidden');
+        cookieBanner.classList.remove('active');
+        if (saveAccept) {
+            const d = new Date();
+            d.setTime(d.getTime() + (30 * 24 * 60 * 60 * 1000));
+            document.cookie = `cookieAccepted=true;expires=${d.toUTCString()};path=/`;
+        }
+    };
+
     if (cookieBanner && acceptBtn) {
-        // Если куки уже приняты ранее, скрываем баннер
         if (getCookie('cookieAccepted') === 'true') {
             cookieBanner.classList.add('cookie-hidden');
         } else {
             cookieBanner.classList.add('active');
         }
 
-        // Обработка клика по кнопке "Принять"
-        acceptBtn.addEventListener('click', function () {
-            cookieBanner.classList.add('cookie-hidden');
-            cookieBanner.classList.remove('active');
+        acceptBtn.addEventListener('click', () => hideCookieBanner(true));
 
-            // Устанавливаем куку на 30 дней
-            const d = new Date();
-            d.setTime(d.getTime() + (30 * 24 * 60 * 60 * 1000));
-            document.cookie = `cookieAccepted=true;expires=${d.toUTCString()};path=/`;
-        });
+        if (cookieCloseBtn) {
+            cookieCloseBtn.addEventListener('click', () => hideCookieBanner(false));
+        }
     }
 
     // --- Modal Logic ---

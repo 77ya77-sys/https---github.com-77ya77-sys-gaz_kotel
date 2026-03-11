@@ -172,11 +172,10 @@
                         *Бесплатно при выполнении ремонтных работ
                     </div>
 
-                    <div class="mobile-partners-list" style="display: none;">
-                        <span
-                            style="font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #838383; display: block; text-align: center; margin-bottom: 10px;">Официальный
+                    <div class="mobile-partners-list">
+                        <span class="mobile-partners-title">Официальный
                             сервис партнеров</span>
-                        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; opacity: 0.6;">
+                        <div class="mobile-partners-logos">
                             <span>BOSCH</span> <span>BAXI</span> <span>Vaillant</span> <span>Protherm</span>
                             <span>Buderus</span> <span>Navien</span>
                         </div>
@@ -205,7 +204,7 @@
                     <!-- Card 1 -->
                     <div class="breakdown-card modal-trigger">
                         <div class="card-header">
-                            <div class="card-icon" style="color: #F4622B; background: #FFF0EB;">
+                            <div class="card-icon card-icon--orange">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path>
@@ -235,7 +234,7 @@
                     <!-- Card 2 -->
                     <div class="breakdown-card modal-trigger">
                         <div class="card-header">
-                            <div class="card-icon" style="color: #EF4444; background: #FEE2E2;">
+                            <div class="card-icon card-icon--red">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <circle cx="12" cy="12" r="10"></circle>
@@ -266,7 +265,7 @@
                     <!-- Card 3 -->
                     <div class="breakdown-card modal-trigger">
                         <div class="card-header">
-                            <div class="card-icon" style="color: #3B82F6; background: #DBEAFE;">
+                            <div class="card-icon card-icon--blue">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
@@ -295,7 +294,7 @@
                     <!-- Card 4 -->
                     <div class="breakdown-card modal-trigger">
                         <div class="card-header">
-                            <div class="card-icon" style="color: #10B981; background: #D1FAE5;">
+                            <div class="card-icon card-icon--green">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path
@@ -327,8 +326,7 @@
                 <div class="cta-wrapper">
                     <button class="btn-ghost modal-trigger hide-mobile">Не нашли свою поломку? <span>Вызвать
                             мастера</span> для диагностики</button>
-                    <a href="#modal" class="btn-ghost-mobile modal-trigger mobile-only"
-                        style="text-decoration: none;">Не нашли свою поломку? <span>Вызвать мастера</span><br>для
+                    <a href="#" class="btn-ghost-mobile modal-trigger mobile-only">Не нашли свою поломку? <span>Вызвать мастера</span><br>для
                         диагностики</a>
                 </div>
             </div>
@@ -338,7 +336,7 @@
         <section class="portfolio">
             <div class="container portfolio-container">
                 <div class="portfolio-header">
-                    <h2 class="h2-title" style="margin-bottom: 0;">Наши работы</h2>
+                    <h2 class="h2-title h2-title--no-mb">Наши работы</h2>
                     <div class="portfolio-controls hide-mobile">
                         <button class="nav-btn prev-btn" aria-label="Назад"><svg width="24" height="24"
                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -442,8 +440,7 @@
                             playsinline></video>
                         <div class="video-thumbnail" style="background-image: url('images/video-preview.webp');">
                             <div class="play-btn" id="playVideoBtn">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="#ffffff"
-                                    style="margin-left: 4px;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="#ffffff">
                                     <polygon points="5 3 19 12 5 21 5 3"></polygon>
                                 </svg>
                             </div>
@@ -491,7 +488,7 @@
         <!-- Prices Section -->
         <section class="prices">
             <div class="container prices-container">
-                <h2 class="h2-title" style="text-align: center;">Прозрачные цены</h2>
+                <h2 class="h2-title h2-title--center">Прозрачные цены</h2>
                 <div class="price-list-card">
                     <div class="price-item">
                         <div class="price-info">
@@ -534,12 +531,12 @@
                         </div>
                         <div class="price-val">от 1000 ₽</div>
                     </div>
-                    <a href="javascript:void(0)" class="price-full-link" id="showPriceModal">
+                    <button type="button" class="price-full-link" id="showPriceModal">
                         Полный прайс-лист <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M5 12h14M12 5l7 7-7 7"></path>
                         </svg>
-                    </a>
+                    </button>
                 </div>
             </div>
         </section>
@@ -547,10 +544,10 @@
         <!-- Trust Section -->
         <section class="trust">
             <div class="container trust-container">
-                <h2 class="h2-title" style="text-align: center;">Нам доверяют</h2>
+                <h2 class="h2-title h2-title--center">Нам доверяют</h2>
                 <div class="trust-grid">
                     <div class="trust-card">
-                        <div class="trust-icon" style="color: #3b82f6; background-color: #dbeafe;">
+                        <div class="trust-icon trust-icon--blue">
                             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
@@ -564,7 +561,7 @@
                         <p class="trust-desc">Юридическая ответственность</p>
                     </div>
                     <div class="trust-card">
-                        <div class="trust-icon" style="color: #f59e0b; background-color: #fef3c7;">
+                        <div class="trust-icon trust-icon--yellow">
                             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="12" cy="8" r="7"></circle>
@@ -575,7 +572,7 @@
                         <p class="trust-desc">Стаж каждого мастера</p>
                     </div>
                     <div class="trust-card">
-                        <div class="trust-icon" style="color: #10b981; background-color: #d1fae5;">
+                        <div class="trust-icon trust-icon--green">
                             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path
@@ -589,7 +586,7 @@
                         <p class="trust-desc">В наличии и в машине мастера</p>
                     </div>
                     <div class="trust-card">
-                        <div class="trust-icon" style="color: #a855f7; background-color: #f3e8ff;">
+                        <div class="trust-icon trust-icon--purple">
                             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="12" cy="12" r="10"></circle>
@@ -737,7 +734,7 @@
                     </table>
                 </div>
                 <div class="modal-footer-cta">
-                    <button class="btn btn-large modal-trigger" style="width: 100%;">Вызвать мастера</button>
+                    <button class="btn btn-large w-100 modal-trigger">Вызвать мастера</button>
                 </div>
             </div>
         </div>
@@ -766,7 +763,7 @@
                         <button type="submit" class="btn btn-large w-100">Перезвоните мне</button>
                         <label class="privacy-checkbox">
                             <input type="checkbox" required>
-                            <span>Я согласен с <a href="privacy.html" target="_blank">политикой конфиденциальности</a> и
+                            <span>Я согласен с <a href="/privacy/" target="_blank">политикой конфиденциальности</a> и
                                 даю согласие на обработку персональных данных</span>
                         </label>
                     </form>
@@ -797,9 +794,16 @@
 
     <!-- Cookie Banner -->
     <div id="cookieBanner" class="cookie-banner">
+        <button type="button" class="cookie-close" id="closeCookies" aria-label="Закрыть">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
         <div class="cookie-text">
-            Мы используем файлы cookie, чтобы сайт стал ещё удобнее. Оставаясь на сайте, вы соглашаетесь с нашей <a
-                href="/privacy.html" target="_blank">политикой конфиденциальности</a>.
+            На сайте используются файлы cookie для удобства работы. Продолжая использовать сайт, вы соглашаетесь с <a
+                href="/privacy/" target="_blank">политикой конфиденциальности</a>.
         </div>
         <div class="cookie-actions">
             <button id="acceptCookies" class="btn btn-sm cookie-accept-btn">Принять</button>
@@ -820,7 +824,7 @@
                                 d="M12 11C12 11 9.5 14 9.5 16.5C9.5 17.8807 10.6193 19 12 19C13.3807 19 14.5 17.8807 14.5 16.5C14.5 14 12 11 12 11Z"
                                 fill="#FFF" />
                         </svg>
-                        <span class="logo-text" style="color:var(--text-main);">Boiler<b>Fix</b></span>
+                        <span class="logo-text footer-logo-text">Boiler<b>Fix</b></span>
                     </div>
                     <p class="footer-desc">Профессиональный ремонт и обслуживание газового оборудования в Новосибирске.
                     </p>
@@ -878,7 +882,7 @@
                     <span>ОГРН 1025400000000</span>
                 </div>
                 <div class="footer-privacy">
-                    <a href="privacy.html" target="_blank">Политика конфиденциальности</a>
+                    <a href="/privacy/" target="_blank">Политика конфиденциальности</a>
                 </div>
                 <div class="footer-copyright">
                     © 2026 BoilerFix. Все права защищены.
