@@ -1272,22 +1272,21 @@ section {
 /* Мобильная версия: плашка снизу */
 .cookie-banner {
     position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    max-width: 100%;
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    width: auto;
+    max-width: calc(100% - 24px);
     background: var(--card-bg);
     padding: 20px 20px calc(20px + env(safe-area-inset-bottom));
-    border-radius: 20px 20px 0 0;
-    box-shadow: 0 -4px 24px rgba(15, 23, 42, 0.12);
+    border-radius: 20px;
+    box-shadow: 0 4px 24px rgba(15, 23, 42, 0.12);
     z-index: 9999;
     display: flex !important;
     flex-direction: column;
     gap: 16px;
     border: 1px solid var(--border-color);
-    border-bottom: none;
-    transform: translateY(100%);
+    transform: translateY(calc(100% + 24px));
     transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
